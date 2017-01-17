@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -90,6 +91,69 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lph-F3-XNR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="820" y="824.43778110944538"/>
+        </scene>
+        <!--Overlay View Controller-->
+        <scene sceneID="NvZ-7z-OJb">
+            <objects>
+                <viewController storyboardIdentifier="Overlay" id="plq-mI-rQB" customClass="OverlayViewController" customModule="MovieSelector" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DlQ-xR-jzJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="2w0-4F-2e6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IV4-bR-AlN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="200"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sPC-pe-kvd">
+                                <rect key="frame" x="29" y="20" width="39.5" height="38"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="21"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8G9-30-gdh">
+                                <rect key="frame" x="167.5" y="150" width="39" height="30"/>
+                                <state key="normal" title="Close">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="closedPressed:" destination="plq-mI-rQB" eventType="touchUpInside" id="464-b9-8hW"/>
+                                </connections>
+                            </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="bFe-az-lvI">
+                                <rect key="frame" x="29" y="61" width="316" height="64"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="64" id="nAx-mg-Sqk"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="8G9-30-gdh" firstAttribute="centerX" secondItem="IV4-bR-AlN" secondAttribute="centerX" id="3rP-Us-MBU"/>
+                            <constraint firstItem="bFe-az-lvI" firstAttribute="leading" secondItem="IV4-bR-AlN" secondAttribute="leadingMargin" constant="13" id="8Ai-FG-DaY"/>
+                            <constraint firstItem="bFe-az-lvI" firstAttribute="top" secondItem="sPC-pe-kvd" secondAttribute="bottom" constant="3" id="8YY-Pq-xu0"/>
+                            <constraint firstItem="8G9-30-gdh" firstAttribute="top" secondItem="DlQ-xR-jzJ" secondAttribute="bottom" constant="130" id="OBg-qq-UA5"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bFe-az-lvI" secondAttribute="trailing" constant="14" id="SIb-Jl-M6w"/>
+                            <constraint firstItem="bFe-az-lvI" firstAttribute="top" secondItem="IV4-bR-AlN" secondAttribute="top" constant="61" id="XDM-Ad-pD5"/>
+                            <constraint firstItem="8G9-30-gdh" firstAttribute="top" secondItem="bFe-az-lvI" secondAttribute="bottom" constant="25" id="YYH-zP-wAw"/>
+                            <constraint firstItem="sPC-pe-kvd" firstAttribute="top" secondItem="DlQ-xR-jzJ" secondAttribute="bottom" id="gLk-Rg-FWi"/>
+                            <constraint firstItem="sPC-pe-kvd" firstAttribute="leading" secondItem="IV4-bR-AlN" secondAttribute="leadingMargin" constant="13" id="tIG-IZ-Q58"/>
+                            <constraint firstItem="bFe-az-lvI" firstAttribute="centerX" secondItem="8G9-30-gdh" secondAttribute="centerX" id="zLW-9Y-f1W"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="200"/>
+                    <connections>
+                        <outlet property="descriptionTextView" destination="bFe-az-lvI" id="S6l-km-gXx"/>
+                        <outlet property="titleLabel" destination="sPC-pe-kvd" id="4e7-9h-7yK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5HD-a5-eIX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1637.5999999999999" y="823.98800599700155"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CWF-En-XjP">

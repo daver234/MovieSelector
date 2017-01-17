@@ -15,6 +15,9 @@
 		551F199D1E2C653D00025E78 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551F199C1E2C653D00025E78 /* Movie.swift */; };
 		551F199F1E2CA84800025E78 /* MovieCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551F199E1E2CA84800025E78 /* MovieCollectionViewController.swift */; };
 		551F19A11E2CA86C00025E78 /* MovieCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551F19A01E2CA86C00025E78 /* MovieCollectionViewCell.swift */; };
+		551F19C31E2DBF1200025E78 /* MoviePresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551F19C21E2DBF1200025E78 /* MoviePresentationController.swift */; };
+		551F19C61E2DCA9000025E78 /* MovieTransitioner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551F19C51E2DCA9000025E78 /* MovieTransitioner.swift */; };
+		551F19C81E2DE27000025E78 /* OverlayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 551F19C71E2DE27000025E78 /* OverlayViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +31,9 @@
 		551F199C1E2C653D00025E78 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		551F199E1E2CA84800025E78 /* MovieCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewController.swift; sourceTree = "<group>"; };
 		551F19A01E2CA86C00025E78 /* MovieCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCollectionViewCell.swift; sourceTree = "<group>"; };
+		551F19C21E2DBF1200025E78 /* MoviePresentationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviePresentationController.swift; sourceTree = "<group>"; };
+		551F19C51E2DCA9000025E78 /* MovieTransitioner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieTransitioner.swift; sourceTree = "<group>"; };
+		551F19C71E2DE27000025E78 /* OverlayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OverlayViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +66,7 @@
 		551F19871E2C63CB00025E78 /* MovieSelector */ = {
 			isa = PBXGroup;
 			children = (
+				551F19C41E2DBF1E00025E78 /* Overview Presentation */,
 				551F19881E2C63CB00025E78 /* AppDelegate.swift */,
 				551F199A1E2C64C700025E78 /* MovieTableViewController.swift */,
 				551F199E1E2CA84800025E78 /* MovieCollectionViewController.swift */,
@@ -71,6 +78,16 @@
 				551F19941E2C63CB00025E78 /* Info.plist */,
 			);
 			path = MovieSelector;
+			sourceTree = "<group>";
+		};
+		551F19C41E2DBF1E00025E78 /* Overview Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				551F19C21E2DBF1200025E78 /* MoviePresentationController.swift */,
+				551F19C51E2DCA9000025E78 /* MovieTransitioner.swift */,
+				551F19C71E2DE27000025E78 /* OverlayViewController.swift */,
+			);
+			name = "Overview Presentation";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -105,6 +122,7 @@
 				TargetAttributes = {
 					551F19841E2C63CB00025E78 = {
 						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 64ZMRUDATB;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -148,8 +166,11 @@
 				551F199B1E2C64C700025E78 /* MovieTableViewController.swift in Sources */,
 				551F199F1E2CA84800025E78 /* MovieCollectionViewController.swift in Sources */,
 				551F19A11E2CA86C00025E78 /* MovieCollectionViewCell.swift in Sources */,
+				551F19C61E2DCA9000025E78 /* MovieTransitioner.swift in Sources */,
 				551F19891E2C63CB00025E78 /* AppDelegate.swift in Sources */,
+				551F19C31E2DBF1200025E78 /* MoviePresentationController.swift in Sources */,
 				551F199D1E2C653D00025E78 /* Movie.swift in Sources */,
+				551F19C81E2DE27000025E78 /* OverlayViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +291,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 64ZMRUDATB;
 				INFOPLIST_FILE = MovieSelector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daverothschild.MovieSelector;
@@ -282,6 +304,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 64ZMRUDATB;
 				INFOPLIST_FILE = MovieSelector/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.daverothschild.MovieSelector;
