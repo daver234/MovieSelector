@@ -78,6 +78,7 @@
                                 <connections>
                                     <outlet property="movieImageView" destination="6bt-pn-fY2" id="gp7-4Q-AmD"/>
                                     <outlet property="movieTitleLabel" destination="SmT-7P-HTi" id="6kJ-BC-xq2"/>
+                                    <segue destination="szt-Pe-Tpe" kind="show" id="9hL-m0-FAd"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -153,7 +154,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5HD-a5-eIX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1637.5999999999999" y="823.98800599700155"/>
+            <point key="canvasLocation" x="1649" y="355"/>
+        </scene>
+        <!--Movie Detail View Controller-->
+        <scene sceneID="suk-Lx-7xV">
+            <objects>
+                <viewController id="szt-Pe-Tpe" customClass="MovieDetailViewController" customModule="MovieSelector" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GaC-Gn-gRa"/>
+                        <viewControllerLayoutGuide type="bottom" id="1eO-s0-pFQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="kgi-et-vyd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="s6h-KY-KJO">
+                                <rect key="frame" x="0.0" y="64" width="375" height="190"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="190" id="CKT-lR-qBW"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lyQ-2j-Ly0">
+                                <rect key="frame" x="0.0" y="218" width="375" height="36"/>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.66507919520547942" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="eKB-Fv-aZN"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="xfq-oJ-5M7">
+                                <rect key="frame" x="16" y="262" width="325" height="307"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="lyQ-2j-Ly0" firstAttribute="leading" secondItem="kgi-et-vyd" secondAttribute="leadingMargin" constant="-16" id="JM2-5F-oei"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="xfq-oJ-5M7" secondAttribute="trailing" constant="18" id="NI6-Bf-Oq2"/>
+                            <constraint firstItem="1eO-s0-pFQ" firstAttribute="top" secondItem="xfq-oJ-5M7" secondAttribute="bottom" constant="98" id="STZ-rT-3dV"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="xfq-oJ-5M7" secondAttribute="leading" id="WID-6W-DJq"/>
+                            <constraint firstItem="s6h-KY-KJO" firstAttribute="top" secondItem="GaC-Gn-gRa" secondAttribute="bottom" id="jOO-9e-GI2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s6h-KY-KJO" secondAttribute="trailing" constant="-16" id="qYL-cs-EZd"/>
+                            <constraint firstItem="lyQ-2j-Ly0" firstAttribute="bottom" secondItem="s6h-KY-KJO" secondAttribute="bottom" id="t3N-G9-fAZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lyQ-2j-Ly0" secondAttribute="trailing" constant="-16" id="zOL-3f-xgd"/>
+                            <constraint firstItem="xfq-oJ-5M7" firstAttribute="top" secondItem="lyQ-2j-Ly0" secondAttribute="bottom" constant="8" id="zZb-Es-1h7"/>
+                            <constraint firstItem="s6h-KY-KJO" firstAttribute="leading" secondItem="kgi-et-vyd" secondAttribute="leadingMargin" constant="-16" id="zcO-Cm-job"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="movieDescriptionTextView" destination="xfq-oJ-5M7" id="NA6-1v-Dkb"/>
+                        <outlet property="movieImageView" destination="s6h-KY-KJO" id="xv6-EU-RKE"/>
+                        <outlet property="movieTitleLabel" destination="lyQ-2j-Ly0" id="eTn-nC-IuB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LRG-pu-RJZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1648.8" y="823.53823088455783"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="CWF-En-XjP">

@@ -10,9 +10,6 @@ import UIKit
 
 public struct Movie {
     
-
-    
-    
     private static let imageBaseURL = "https://image.tmdb.org/t/p/w500"
     public var title:String!
     public var imagePath:String!
@@ -24,11 +21,21 @@ public struct Movie {
         self.description = description
     }
     
+    public static func getImage (forMovie movie:Movie) -> UIImage? {
+        if let imagePath = checkForImageData(withMovieOjbect: movie) {
+            if let imageData = FileManager.default.contents(atPath: imagePath) {
+                return UIImage(data: imageData)
+            }
+        }
+        return nil
+    }
+    
+    
     // Get data from URL, if successful pass back data in a completion handler to calling function
     private static func getMovieData (with completion:@escaping (_ success:Bool, _ object:AnyObject?) -> ()) {
         
         let session = URLSession(configuration: .default)
-        let request = URLRequest(url: URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=" )!)
+        let request = URLRequest(url: URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=1ba56925490e5fd265fafc56a7303b99" )!)
         
         session.dataTask(with: request) { (data:Data?, response:URLResponse?, error:Error?) in
             if let data = data {
